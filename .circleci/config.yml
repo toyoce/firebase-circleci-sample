@@ -15,7 +15,7 @@ jobs:
  
       - run:
           name: Decode key file
-          command: echo $FIREBASE_KEY | base64 -d > ${HOME}/account-auth.json
+          command: echo $FIREBASE_KEY | sed 's/ //g' | base64 -d > ${HOME}/account-auth.json
  
       - run:
           name: Setup local environment
